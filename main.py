@@ -1,4 +1,4 @@
-## UPDATED FILE OTA TEST  V1 ##
+## UPDATED FILE OTA TEST  V1 26Jun2021 ##
 
 import machine
 from machine import Pin
@@ -6,6 +6,7 @@ from machine import ADC
 import time
 from time import sleep
 import dht
+import senko
 
 import network
 
@@ -108,17 +109,16 @@ password = '09797004688'
 wifi_setup()
 print('Wifi ON=1 or OFF=0: Status =',wifi_status())
 
+#################################################################################
 ########  If wifi is ON, check for update via OTA on Github repository  #########
 #UID = 'Eric8266'
 
 if wifi_status() == 1:
     print('Check for Update')
-    import senko
     
-    print('Ready to check for updates')
 # Original:    OTA = senko.Senko(user="RangerDigital", repo="senko", working_dir="examples", files=["main.py"])    
 #    OTA = senko.Senko(user="Eric8266", repo="tomato", working_dir="examples", files=["main.py"])
-    OTA = senko.Senko(user="Eric8266", repo="tomato", working_dir="", files=["main.py"])
+    OTA = senko.Senko(user="Eric8266", repo="tomato", files=["main.py"])
 
     print('OTA update:', OTA.update())
     
@@ -127,6 +127,7 @@ if wifi_status() == 1:
         machine.reset()
     else:
         print('No updates available')
+#################################################################################
 #################################################################################
 
 
