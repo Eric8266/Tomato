@@ -1,4 +1,4 @@
-## UPDATED FILE OTA TEST  V1 ##
+## UPDATED FILE OTA TEST  V1 29 Jun 2021 ##
 
 import machine
 from machine import Pin
